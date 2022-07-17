@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<ruleset name="customruleset">
+  <description>
+  This ruleset checks my code for bad stuff
+  </description>
+</ruleset>
