@@ -15,17 +15,17 @@ on:
 
 permissions:
   contents: read
-  actions: read  
-  deployments: read
-  id-token: read
-  issues: read
-  discussions: read
-  packages: read
-  pages: read
-  pull-requests: read
-  repository-projects: read
-  security-events: read
-  statuses: read
+  #actions: read  
+  #deployments: read
+  #id-token: read
+  #issues: read
+  #discussions: read
+  #packages: read
+  #pages: read
+  #pull-requests: read
+  #repository-projects: read
+  #security-events: read
+  #statuses: read
 
 jobs:
 
@@ -46,15 +46,15 @@ jobs:
         RICHARD_TESTX: ${{ secrets.RICHARD_TEST }}        
         RICHARD_TEST: ${{ secrets.RICHARD_TEST }}
       run: |
-        echo ${{ RICHARD_TEST }}
-        echo ${{ env.RICHARD_TEST }}
-        echo ${{ secrets.RICHARD_TEST }}
-        echo ${{ secrets.actions.RICHARD_TEST }}
-        echo ${{ secrets.Actions.RICHARD_TEST }}
+    #    echo ${{ RICHARD_TEST }}
+    #    echo ${{ env.RICHARD_TEST }}
+    #    echo ${{ secrets.RICHARD_TEST }}
+    #    echo ${{ secrets.actions.RICHARD_TEST }}
+    #    echo ${{ secrets.Actions.RICHARD_TEST }}
         echo $RICHARD_TESTX >> secrets.txt
-        echo ${{ secrets.RICHARD_TEST }} >> secrets.txt
-        echo ${{ secrets.actions.RICHARD_TEST }} >> secrets.txt
-        echo ${{ secrets.Actions.RICHARD_TEST }} >> secrets.txt
+    #    echo ${{ secrets.RICHARD_TEST }} >> secrets.txt
+    #    echo ${{ secrets.actions.RICHARD_TEST }} >> secrets.txt
+    #    echo ${{ secrets.Actions.RICHARD_TEST }} >> secrets.txt
         cat secrets.txt
 
     - name: Debug2
