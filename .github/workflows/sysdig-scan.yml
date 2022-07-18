@@ -27,7 +27,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Debug
+      run: env
+
+    - name: Debug Set up secret file
+      env:
+        RICHARD_TEST: ${{ secrets.RICHARD_TEST }}
+        DEBUG_SECRET_KEY: ${{ secrets.DEBUG_SECRET_KEY }}
+      run: |
+        echo ${{ secrets.RICHARD_TEST }}
+        echo $RICHARD_TEST >> secrets.txt
+        cat secrets.txt
+
+    - name: Debug2
+      run: echo ${{secrets.RICHARD_TEST}}
+    - uses: actions/checkout@v3    
 
     - name: Set up JDK 17
       uses: actions/setup-java@v3
@@ -48,21 +62,6 @@ jobs:
       # Tag image to be built
       # Change ${{ github.repository }} variable by another image name if you want but don't forget changing also image-tag below
       run: docker build . --file Dockerfile --tag ${{ github.repository }}:latest
-
-
-    - name: Debug
-      run: env
-
-    - name: Debug Set up secret file
-      env:
-        RICHARD_TEST: ${{ secrets.RICHARD_TEST }}
-        DEBUG_SECRET_KEY: ${{ secrets.DEBUG_SECRET_KEY }}
-      run: |
-        echo $RICHARD_TEST >> secrets.txt
-        cat secrets.txt
-
-    - name: Debug2
-      run: echo ${{secrets.RICHARD_TEST}}      
 
     - name: Sysdig Secure Inline Scan
       id: scan
