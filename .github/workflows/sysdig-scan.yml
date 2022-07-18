@@ -41,6 +41,8 @@ jobs:
       env:
         RICHARD_TESTX: ${{ secrets.RICHARD_TEST }}
         RICHARD_TEST: ${{ secrets.RICHARD_TEST }}
+        RICHARD_TESTX: ${{ env.secrets.RICHARD_TEST }}
+        RICHARD_TEST: ${{ env.secrets.RICHARD_TEST }}
       run: |
         echo ${{ secrets.RICHARD_TEST }}
         echo ${{ env.RICHARD_TEST }}
