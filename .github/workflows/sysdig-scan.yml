@@ -49,13 +49,12 @@ jobs:
       # Change ${{ github.repository }} variable by another image name if you want but don't forget changing also image-tag below
       run: docker build . --file Dockerfile --tag ${{ github.repository }}:latest
 
-    - name: Setup 
-      env: SYSDIG_SECURE_TOKEN: ${{ secrets.SYSDIG_SECURE_TOKEN }}
-      run: env
-
 
     - name: Debug
       run: env
+
+    - name: Debug2
+      run: echo ${{secrets.RICHARD_TEST}}      
 
     - name: Sysdig Secure Inline Scan
       id: scan
