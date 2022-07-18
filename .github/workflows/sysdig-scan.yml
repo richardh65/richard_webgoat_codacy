@@ -35,10 +35,10 @@ jobs:
         RICHARD_TESTX: ${{ secrets.RICHARD_TEST }}        
         RICHARD_TEST: ${{ secrets.RICHARD_TEST }}
       run: |
-        echo ${{ secrets.RICHARD_TEST }}        
-        echo ${{ RICHARD_TESTX }}
+        echo ${{ secrets.RICHARD_TEST }}
         env
         echo $RICHARD_TESTX >> secrets.txt
+        echo ${{ secrets.RICHARD_TEST }} >> secrets.txt
         cat secrets.txt
 
     - name: Debug2
