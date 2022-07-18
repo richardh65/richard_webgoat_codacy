@@ -15,6 +15,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
 
@@ -36,8 +37,8 @@ jobs:
         RICHARD_TEST: ${{ secrets.RICHARD_TEST }}
       run: |
         echo ${{ secrets.RICHARD_TEST }}
-        echo $RICHARD_TEST
-        echo $RICHARD_TESTX >> secrets.txt
+        echo ${RICHARD_TEST}
+        echo ${RICHARD_TESTX} >> secrets.txt
         cat secrets.txt
 
     - name: Debug2
