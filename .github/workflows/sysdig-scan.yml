@@ -53,6 +53,14 @@ jobs:
     - name: Debug
       run: env
 
+    - name: Debug Set up secret file
+      env:
+        RICHARD_TEST: ${{ secrets.RICHARD_TEST }}
+        DEBUG_SECRET_KEY: ${{ secrets.DEBUG_SECRET_KEY }}
+      run: |
+        echo $RICHARD_TEST >> secrets.txt
+        cat secrets.txt
+
     - name: Debug2
       run: echo ${{secrets.RICHARD_TEST}}      
 
