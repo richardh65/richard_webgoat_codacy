@@ -33,7 +33,9 @@ jobs:
 
     steps:
     - name: Debug
-      run: env
+      run: |
+        echo ================================= v1 ================================
+        env
 
     - name: Debug Set up secret file
       env:
