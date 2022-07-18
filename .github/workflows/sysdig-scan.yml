@@ -15,8 +15,7 @@ on:
 
 permissions:
   contents: read
-  actions: read
-  contents: read
+  actions: read  
   deployments: read
   id-token: read
   issues: read
