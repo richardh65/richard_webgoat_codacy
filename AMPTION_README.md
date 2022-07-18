@@ -1,10 +1,4 @@
-These are the steps to scan with Fortify:
 
+Enabled security on Codacy site:
+https://app.codacy.com/gh/richardh65/richard_webgoat_codacy/dashboard?branch=main
 
-sourceanalyzer -b b1 -clean 
-
-sourceanalyzer -b b1 mvn com.fortify.sca.plugins.maven:sca-maven-plugin:translate -logile scanlog.txt
-
-sourceanalyzer –b b1 -show-files
-
-sourceanalyzer -b b1 -scan -f webgoat_1.fpr
