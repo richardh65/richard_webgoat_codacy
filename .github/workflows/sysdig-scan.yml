@@ -35,8 +35,7 @@ jobs:
         RICHARD_TESTX: ${{ secrets.RICHARD_TEST }}        
         RICHARD_TEST: ${{ secrets.RICHARD_TEST }}
       run: |
-        echo ${{ secrets.RICHARD_TEST }}
-        echo $RICHARD_TESTX
+        echo ${{ secrets.RICHARD_TEST }}        
         echo ${{ RICHARD_TESTX }}
         env
         echo $RICHARD_TESTX >> secrets.txt
